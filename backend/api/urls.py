@@ -28,5 +28,6 @@ urlpatterns = [
     path('accounts/', include('django_registration.backends.activation.urls')),
     path('accounts/', include("django.contrib.auth.urls")),
     path('auth/', include('dj_rest_auth.urls')),
-    path('auth/registration/', include('dj_rest_auth.registration.urls'))
+    path('auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/v1/', include('questions.urls'))
 ]

@@ -6,8 +6,8 @@ from django.utils.text import slugify
 
 
 @receiver(pre_save, sender=Question)
-def add_slug(sender, instanse, *args, **kwrgs):
-    if instanse and not instanse.slug:
-        slug = slugify(instanse.content)
+def add_slug(sender, instance, *args, **kwrgs):
+    if instance and not instance.slug:
+        slug = slugify(instance.content)
         random_string = get_random_string(length=8)
-        instanse.slug = slug + "-" + random_string
+        instance.slug = slug + "-" + random_string

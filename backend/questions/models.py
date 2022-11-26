@@ -7,7 +7,7 @@ from django.conf import settings
 class Question(TimeStampModel):
 
     content = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=258, unique=True)
+    slug = models.SlugField(max_length=258, unique=True, blank=True)
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="questions")
 
